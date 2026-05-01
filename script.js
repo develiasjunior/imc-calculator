@@ -8,19 +8,22 @@ button.addEventListener("click", function () {
 
     const result = document.querySelector(".resultImc");
 
-    result.innerText = `Seu IMC é: ${imc.toFixed(2)}`;
-    console.log(result)
+   
 
     let classification;
 
     if (imc < 18.5) {
         classification = "Abaixo do peso";
+        result.style.backgroundColor = "#3498db"
     } else if (imc < 25) {
         classification = "Peso normal";
+        result.style.backgroundColor = "#2ecc71"
     } else if (imc < 30) {
         classification = "Sobrepeso";
+        result.style.backgroundColor = "#f1c40f"
     } else {
         classification = "Obesidade"
+        result.style.backgroundColor = "#e74c3c"
     }
 
     result.innerText = `IMC: ${imc.toFixed(2)} - ${classification}`;
