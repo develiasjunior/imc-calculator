@@ -25,5 +25,11 @@ button.addEventListener("click", function () {
 
     result.innerText = `IMC: ${imc.toFixed(2)} - ${classification}`;
 
+    if (!weight || !height) {
+        result.innerHTML = "[ERRO]Preencha todos os campos!";
+        window.alert("[ERRO]Preencha todos os campos!")
+        return;
+    }
+
 })
 
