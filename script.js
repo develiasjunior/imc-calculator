@@ -1,6 +1,6 @@
 const button = document.querySelector(".calculate")
 
-button.addEventListener("click", function() {
+button.addEventListener("click", function () {
     const weight = Number(document.querySelector(".userWheight").value);
     const height = Number(document.querySelector(".userHeight").value) / 100;
 
@@ -10,4 +10,20 @@ button.addEventListener("click", function() {
 
     result.innerText = `Seu IMC é: ${imc.toFixed(2)}`;
     console.log(result)
+
+    let classification;
+
+    if (imc < 18.5) {
+        classification = "Abaixo do peso";
+    } else if (imc < 25) {
+        classification = "Peso normal";
+    } else if (imc < 30) {
+        classification = "Sobrepeso";
+    } else {
+        classification = "Obesidade"
+    }
+
+    result.innerText = `IMC: ${imc.toFixed(2)} - ${classification}`;
+
 })
+
